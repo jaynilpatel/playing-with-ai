@@ -53,19 +53,38 @@
 /**
  * following source: http://jsfiddle.net/kHJr6/2/
  */
+
+function loadJSON(callback) {   
+
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'tfjsv3/model.json', true); // Replace 'my_data' with the path to your file
+    xobj.onreadystatechange = function () {
+          if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+          }
+    };
+    xobj.send(null);  
+ }
 // init function
 async function init(){
+    
+    loadJSON(function(response) {
+        var model = response;
+        console.log('response got successfully');
+    });
 
-    //model =  await tf.loadModel('indexeddb://my-model-1');
     model =  await tf.loadModel('https://hkinsley.com/static/tfjsmodel/model.json');
-    //model =  await tf.loadModel('tfjsversion/model.json');
+    //model =  await tf.loadModel('localstorage://trainedModel/model.json');
+    //model =  await tf.loadModel('indexeddb://my-model-1');
     console.log('model loaded from storage');
     computer.ai_plays = true;
 
      if(computer.ai_plays){
-        document.getElementById("playing").innerHTML = "Playing: AI";
+        document.getElementById("playing").innerHTML = "AI BOT is playing with you";
     }else{
-        document.getElementById("playing").innerHTML = "Playing: Computer";
+        document.getElementById("playing").innerHTML = "Computer is playing with itself! You'll get your turn!";
     }
 
     // start a game
@@ -379,9 +398,9 @@ AI.prototype.new_turn = function(){
 
     //computer.ai_plays = !computer.ai_plays;
     if(computer.ai_plays){
-        document.getElementById("playing").innerHTML = "Playing: AI";
+        document.getElementById("playing").innerHTML = "AI BOT is playing with you";
     }else{
-        document.getElementById("playing").innerHTML = "Playing: Computer";
+        document.getElementById("playing").innerHTML = "Computer is playing with itself! You'll get your turn!";
     }
 
     // after x turn
@@ -406,9 +425,9 @@ AI.prototype.reset = function(){
     this.turn = 0;
 
     if(computer.ai_plays){
-        document.getElementById("playing").innerHTML = "Playing: AI";
+        document.getElementById("playing").innerHTML = "AI BOT is playing with you";
     }else{
-        document.getElementById("playing").innerHTML = "Playing: Computer";
+        document.getElementById("playing").innerHTML = "Computer is playing with itself! You'll get your turn!";
     }
 
     console.log('reset')
