@@ -115,7 +115,7 @@ var keysDown = {};
 
 // renders board
 var render = function () {
-    context.fillStyle = "#000000";
+    context.fillStyle = "#283747";
     context.fillRect(0, 0, width, height);
     player.render();
     computer.render();
@@ -165,7 +165,7 @@ function Paddle(x, y, width, height) {
 
 // renders paddle on a board
 Paddle.prototype.render = function () {
-    context.fillStyle = "#59a6ff";
+    context.fillStyle = "#F4D03F";
     context.fillRect(this.x, this.y, this.width, this.height);
 };
 
@@ -268,7 +268,7 @@ function Ball(x, y) {
 Ball.prototype.render = function () {
     context.beginPath();
     context.arc(this.x, this.y, 5, 2 * Math.PI, false);
-    context.fillStyle = "#ddff59";
+    context.fillStyle = "#fff";
     context.fill();
 };
 
