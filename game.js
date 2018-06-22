@@ -1,5 +1,5 @@
 /**
- * A LARGE PART OF JAVASCRIPT AVAIABLE AT: http://jsfiddle.net/kHJr6/2/
+ * A LARGE PART OF JAVASCRIPT CODE FOR PING PONG AVAIABLE AT: http://jsfiddle.net/kHJr6/2/
  */
 /**
  * TOTAL INPUTS ARE 8:
@@ -22,7 +22,8 @@
  * to move. eg: -1 * 5 will move 5 pixels to the left 
  */
 /*
-    TRAINING THE GAME USING TENSORFLOWJS
+    TRAINING THE GAME DIRECTLY IN TENSORFLOWJS
+    
     const model = tf.sequential();
     model.add(tf.layers.dense({
     units: 256,
@@ -49,7 +50,7 @@
 */
 
 
-// TRAINING THE GAME USING KERAS AND IMPORTING THE MODEL TO JAVASCRIPT
+// TRAINING THE GAME USING KERAS AND IMPORTING THE TRAINED MODEL TO JAVASCRIPT
 /**
  * following source: http://jsfiddle.net/kHJr6/2/
  */
