@@ -83,7 +83,7 @@ async function init(){
     computer.ai_plays = true;
 
      if(computer.ai_plays){
-        document.getElementById("playing").innerHTML = "AI BOT is playing with you";
+        document.getElementById("playing").innerHTML = "Use Left and Right arrow keys to control the pad.";
     }else{
         document.getElementById("playing").innerHTML = "Computer is playing with itself! You'll get your turn!";
     }
@@ -399,7 +399,7 @@ AI.prototype.new_turn = function(){
 
     //computer.ai_plays = !computer.ai_plays;
     if(computer.ai_plays){
-        document.getElementById("playing").innerHTML = "AI BOT is playing with you";
+        document.getElementById("playing").innerHTML = "Use Left and Right arrow keys to control the pad.";
     }else{
         document.getElementById("playing").innerHTML = "Computer is playing with itself! You'll get your turn!";
     }
@@ -426,7 +426,7 @@ AI.prototype.reset = function(){
     this.turn = 0;
 
     if(computer.ai_plays){
-        document.getElementById("playing").innerHTML = "AI BOT is playing with you";
+        document.getElementById("playing").innerHTML = "Use Left and Right arrow keys to control the pad.";
     }else{
         document.getElementById("playing").innerHTML = "Computer is playing with itself! You'll get your turn!";
     }
