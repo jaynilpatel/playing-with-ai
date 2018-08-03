@@ -1,4 +1,4 @@
-AI bot that will play ping pong in browser. This uses tensorflowjs to load the trained model in javascript. The model is trained with Keras. To play the game, clone or download the repository. Then just open *game.html* and play. 
+AI bot that will play ping pong in browser. This uses tensorflowjs to load the trained model in javascript. The model is trained with Keras. To play the game, clone or download the repository. Make sure you are connected to the internet. Now just open *game.html* and play. 
 
 The repository already contains a trained model. But if you want to train and load your own model you'll need to install these dependencies for *training.py*.
 
